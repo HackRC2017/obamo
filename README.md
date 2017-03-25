@@ -42,6 +42,7 @@ docker run -d \
 
 ```bash
 curl http://localhost:5000/ping
+pong
 ```
 
 `/readtime` - get the estimated reading time for the given news story URL:
@@ -51,4 +52,20 @@ curl -X POST \
      -H 'Content-Type: application/json' \
      -d '{"url": "https://services.radio-canada.ca/hackathon2017/neuro/v1/news-stories/1023332"}'\
      http://localhost:5000/readtime
+{
+  "sections": {
+    "body": {
+      "minutes": 2,
+      "seconds": 90
+    },
+    "summary": {
+      "minutes": 1,
+      "seconds": 10
+    }
+  },
+  "total": {
+    "minutes": 2,
+    "seconds": 100
+  }
+}
 ```
